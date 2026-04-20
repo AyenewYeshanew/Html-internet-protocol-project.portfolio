@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Ayenew Yeshanew | Blockchain Developer Portfolio</title>
+    <style>
+        /* ---------- RESET & GLOBAL ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #eef2fb 0%, #e0eaf5 100%);
+            color: #0a2540;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* container utility */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ---------- TYPOGRAPHY & LINKS (deep blue + deep teal) ---------- */
+        h1, h2, h3 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            background: linear-gradient(135deg, #0B2B40, #1C6E8F);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-left: 6px solid #1F7A8C;
+            padding-left: 1rem;
+            margin-bottom: 1.8rem;
+            color: #0B3B4F;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #146B8A;
+        }
+
+        a {
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        /* ---------- HEADER SECTION (new compact style under nav, clean) ---------- */
+        .hero-under {
+            background: linear-gradient(105deg, #0B2B40 0%, #1C5D72 100%);
+            padding: 2rem 1.5rem;
+            margin: 0 0 1.8rem 0;
+            text-align: center;
+            border-radius: 0 0 2rem 2rem;
+            box-shadow: 0 12px 24px -12px rgba(7, 34, 47, 0.4);
+        }
+
+        .hero-under p {
+            color: #e0f0f5;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .hero-under .student-badge {
+            background: rgba(255,255,240,0.12);
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            margin-top: 0.6rem;
+            backdrop-filter: blur(2px);
+            font-weight: 500;
+            color: #CAF0F8;
+        }
+
+        .hero-roles {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #cae9f5;
+        }
+
+        /* ---------- NAVIGATION (sticky, glass deep style) ---------- */
+        nav {
+            background: rgba(11, 43, 64, 0.92);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid #2C7A8C;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 2.2rem;
+            padding: 0.9rem 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #EAF6FA;
+            padding: 0.4rem 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+
+        nav ul li a:hover {
+            border-bottom-color: #4FB3C9;
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        /* ---------- SECTIONS general (deep teal accents) ---------- */
+        section {
+            padding: 3rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            scroll-margin-top: 80px;
+        }
+
+        /* about section with image */
+        #about {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2.5rem;
+            background: white;
+            border-radius: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(7, 45, 65, 0.12);
+            transition: transform 0.2s;
+            border: 1px solid rgba(31, 122, 140, 0.2);
+        }
+
+        .about-content {
+            flex: 2;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #1F7A8C;
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
+            background: #cce3ed;
+            transition: transform 0.3s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
+            border-color: #0F5B6E;
+        }
+
+        #about h2 {
+            border-left-color: #1F7A8C;
+            margin-bottom: 1rem;
+        }
+
+        #about p {
+            font-size: 1.05rem;
+            color: #1e3a4d;
+            line-height: 1.6;
+        }
+
+        /* ---------- PROJECT CARDS (grid with deep teal hover) ---------- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .project-card {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 12px 24px -10px rgba(7, 45, 65, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(31, 122, 140, 0.2);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 38px -14px #1F7A8C40;
+            border-color: #1F7A8C;
+            background: #FEFFFF;
+        }
+
+        .project-card h3 {
+            margin-bottom: 0.75rem;
+            color: #0F5B6E;
+        }
+
+        .project-card p {
+            color: #2c5468;
+            font-size: 0.95rem;
+        }
+
+        /* ---------- SKILLS SECTION (deep blue/teal badges) ---------- */
+        #skills {
+            background: rgba(31, 122, 140, 0.04);
+            border-radius: 2rem;
+            padding: 2.5rem 1.8rem;
+        }
+
+        #skills ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+            margin-top: 1.2rem;
+        }
+
+        #skills ul li {
+            background: #E3F0F5;
+            padding: 0.7rem 1.4rem;
+            border-radius: 60px;
+            font-weight: 600;
+            color: #0C4E63;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            transition: 0.2s;
+            border-left: 3px solid #1F7A8C;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        }
+
+        #skills ul li:hover {
+            background: #CAE9F0;
+            transform: translateY(-2px);
+            color: #043645;
+            border-left-color: #0B5E74;
+        }
+
+        /* ---------- CONTACT SECTION (deep teal modern) ---------- */
+        #contact {
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 15px 30px -12px rgba(7, 45, 65, 0.1);
+            margin-bottom: 2rem;
+            border: 1px solid #cde3ec;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            background: #FCFEFE;
+            padding: 1.8rem;
+            border-radius: 1.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            padding: 0.7rem 0.8rem;
+            border-bottom: 1px solid #D9ECF2;
+            transition: 0.2s;
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-label {
+            font-weight: 700;
+            min-width: 100px;
+            color: #0F5B6E;
+        }
+
+        .contact-item a {
+            color: #1F7A8C;
+            font-weight: 500;
+            word-break: break-all;
+            border-bottom: 1px dotted transparent;
+        }
+
+        .contact-item a:hover {
+            color: #0B5E74;
+            border-bottom-color: #1F7A8C;
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: #2A6E84;
+            border-top: 1px solid rgba(31, 122, 140, 0.3);
+            background: #EAF3F8;
+        }
+
+        /* ---------- RESPONSIVE (smart adjustments) ---------- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            section {
+                padding: 2rem 1rem;
+                scroll-margin-top: 100px;
+            }
+
+            #about {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+
+            .about-image {
+                margin-top: 0;
+            }
+
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+
+            nav ul {
+                gap: 1.2rem;
+                padding: 0.8rem 0.5rem;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+
+            .hero-under {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero-roles {
+                gap: 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            .contact-label {
+                min-width: 80px;
+                font-size: 0.9rem;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #skills ul li {
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+            }
+
+            nav ul {
+                gap: 0.8rem;
+            }
+
+            .hero-under p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* ---------- HOVER & ACCESSIBILITY ---------- */
+        ::selection {
+            background: #B9DDEB;
+            color: #053545;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #d4e7ef;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1F7A8C;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- header content reimagined: removed AYENEW YESHANEW / ID / Section from above, moved into new style under navigation -->
+<nav>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- New compact hero section with deep blue/teal style, contains name, ID, section info but restructured under nav, elegant -->
+<div class="hero-under">
+    <h1 style="color: white; background: none; -webkit-background-clip: unset; background: transparent; margin-bottom: 0.5rem;">AYENEW YESHANEW</h1>
+    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 0.5rem 0 0.3rem;">
+        <span class="student-badge">🆔 ID: MTUUR/7965/17</span>
+        <span class="student-badge">📚 Section A</span>
+    </div>
+    <p class="student-badge" style="background: rgba(0,0,0,0.2); margin-top: 0.6rem;">🎓 Second year Information Technology student | Blockchain & Web3 Enthusiast</p>
+    <div class="hero-roles">
+        <span>✦ HTML Developer</span>
+        <span>✦ Smart CSS Design</span>
+        <span>✦ Web3 Developer ✦</span>
+    </div>
+</div>
+
+<main>
+    <section id="about">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>I'm a passionate HTML developer and blockchain advocate specializing in decentralized applications and smart contracts. With deep expertise in Solidity, Ethereum, and DeFi ecosystems, I build secure, scalable Web3 solutions that merge transparency with modern design. Currently focused on full-stack blockchain integration and delivering high-performance interfaces using semantic HTML, CSS, and modern JavaScript.</p>
+            <p style="margin-top: 1rem;">🔹 <strong>Deep Blue & Teal philosophy:</strong> clean, resilient code and trustless architecture. I thrive at the intersection of design systems and distributed ledger technology.</p>
+        </div>
+        <div class="about-image">
+            <!-- professional profile image with fallback, deep teal border -->
+            <img src="bb.jpg" alt="Ayenew Yeshanew - blockchain developer" class="profile-img" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?background=1F7A8C&color=fff&rounded=true&size=180&name=Ayenew+Y';">    
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>⚡ Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>🎨 NFT Marketplace</h3>
+                <p>A robust platform to mint, bid, and trade NFTs with a secure smart contract auction system. Includes royalty splits, IPFS metadata, and real-time event listeners. Built with Solidity, Ethers.js and responsive front-end.</p>
+            </div>
+            <div class="project-card">
+                <h3>🔄 DEX Platform (AMM)</h3>
+                <p>Decentralized exchange enabling trustless token swaps and liquidity provision. Features yield farming, dynamic slippage, and Chainlink price feeds. Fully tested with Hardhat and modern Web3 patterns.</p>
+            </div>
+            <div class="project-card">
+                <h3>💰 Crypto Staking App</h3>
+                <p>Staking dApp allowing users to lock ERC-20 tokens and earn APY rewards. Admin dashboard with auto-compounding, unstaking cooldown, and security-first design. Deployed on testnet.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>🧠 Core Competencies</h2>
+        <ul>
+            <li>Blockchain Development</li>
+            <li>Smart Contract Auditing</li>
+            <li>Web3.js & Ethers.js</li>
+            <li>Solidity & Hardhat</li>
+            <li>Responsive HTML/CSS</li>
+            <li>Modern JavaScript (ES6+)</li>
+            <li>DeFi Protocols & DEX</li>
+            <li>RESTful API Integration</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>📬 Connect with Me</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <span class="contact-label">📧 Email:</span>
+                <a href="mailto:ayu@gmail.com">ayu@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">📞 Phone:</span>
+                <a href="tel:+251921421529">+251 921 421 529</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">💬 Telegram:</span>
+                <a href="https://t.me/ayu1521" target="_blank" rel="noopener">@ayu1521</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">🔗 LinkedIn:</span>
+                <a href="https://linkedin.com/in/ayenewyeshanew" target="_blank" rel="noopener">linkedin.com/in/ayenewyeshanew</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">🐙 GitHub:</span>
+                <a href="https://github.com/ayenew" target="_blank" rel="noopener">github.com/ayenew</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Ayenew Yeshanew — Deep Blue • Deep Teal Portfolio | Blockchain & Web3 Vision</p>
+    <p style="margin-top: 0.5rem; font-size: 0.75rem;">✨ responsive design | smart layout | built with internal CSS ✨</p>
+</footer>
+
+</body>
+</html>
